@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSAT Study Companion</title>
+    <meta name="description" content="Your personalized LSAT study companion with countdown, motivation, and daily practice">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="site-title">LSAT Study Companion</h1>
+            <p class="subtitle">Stay motivated, track progress, practice daily</p>
+        </header>
+
+        <!-- Personal Message Section (appears conditionally) -->
+        <div id="personalMessage" class="personal-message hidden">
+            <div class="message-content">
+                <span class="message-icon">💌</span>
+                <p id="personalMessageText"></p>
+            </div>
+            <button id="closeMessage" class="close-btn" aria-label="Close message">&times;</button>
+        </div>
+
+        <!-- Main Dashboard -->
+        <main class="main-dashboard">
+            <!-- Countdown Section -->
+            <section class="card countdown-card">
+                <h2 class="card-title">LSAT Countdown</h2>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-number">0</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-number">0</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-number">0</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-number">0</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                <p id="progressText" class="progress-text"></p>
+            </section>
+
+            <!-- Three Cards Row -->
+            <div class="three-card-grid">
+                <!-- Motivational Quote -->
+                <section class="card quote-card">
+                    <h2 class="card-title">Daily Motivation</h2>
+                    <div id="quote" class="quote">
+                        <p class="quote-text"></p>
+                    </div>
+                    <button id="newQuote" class="btn btn-secondary">New Quote</button>
+                </section>
+
+                <!-- Study Streak -->
+                <section class="card streak-card">
+                    <h2 class="card-title">Study Streak</h2>
+                    <div class="streak-display">
+                        <div class="streak-flame">🔥</div>
+                        <div class="streak-number" id="currentStreak">0</div>
+                        <p class="streak-label">Day Streak</p>
+                    </div>
+                    <div class="streak-stats">
+                        <p>Longest Streak: <span id="longestStreak">0</span> days</p>
+                        <p>Total Study Days: <span id="totalDays">0</span></p>
+                    </div>
+                </section>
+
+                <!-- Score Goal -->
+                <section class="card score-card">
+                    <h2 class="card-title">Score Goal</h2>
+                    <div class="score-display">
+                        <div class="score-target">
+                            <span class="score-number" id="targetScore">170</span>
+                            <p class="score-label">Target Score</p>
+                        </div>
+                        <div class="score-range">
+                            <p class="score-info">LSAT Range: 120-180</p>
+                        </div>
+                    </div>
+                    <div class="score-gauge">
+                        <div id="scoreProgress" class="score-progress"></div>
+                    </div>
+                    <p id="scoreMotivation" class="score-motivation"></p>
+                </section>
+            </div>
+        </main>
+
+        <!-- Study Mode Section -->
+        <section class="study-mode-section">
+            <div class="section-header">
+                <h2 class="section-title">Study Mode</h2>
+                <p class="section-subtitle">Focus time with Pomodoro technique</p>
+            </div>
+
+            <div class="timer-container">
+                <div class="card timer-card-large">
+                    <!-- Celebration Message (hidden by default) -->
+                    <div id="celebrationMessage" class="celebration-message hidden">
+                        <div class="celebration-content">
+                            <span class="celebration-icon">🎉</span>
+                            <h3 id="celebrationTitle">Great Job!</h3>
+                            <p id="celebrationText">25 minutes closer to success!</p>
+                        </div>
+                    </div>
+
+                    <h2 class="card-title">Pomodoro Timer</h2>
+                    <div class="timer-display">
+                        <div id="timerCircle" class="timer-circle">
+                            <span id="timerDisplay" class="timer-number">25:00</span>
+                        </div>
+                    </div>
+                    <div class="timer-controls">
+                        <button id="startTimer" class="btn btn-primary btn-large">Start</button>
+                        <button id="pauseTimer" class="btn btn-secondary btn-large" disabled>Pause</button>
+                        <button id="resetTimer" class="btn btn-secondary btn-large">Reset</button>
+                    </div>
+                    <div class="timer-mode">
+                        <label for="timerMode">Mode:</label>
+                        <select id="timerMode">
+                            <option value="work" selected>Study (25 min)</option>
+                            <option value="break">Break (5 min)</option>
+                        </select>
+                    </div>
+
+                    <!-- Timer Duration Settings -->
+                    <div class="timer-settings">
+                        <details class="timer-settings-details">
+                            <summary>⚙️ Customize Timer Durations</summary>
+                            <div class="timer-settings-content">
+                                <div class="timer-setting-item">
+                                    <label for="workDuration">Study Duration (minutes):</label>
+                                    <input type="number" id="workDuration" min="1" max="120" value="25">
+                                </div>
+                                <div class="timer-setting-item">
+                                    <label for="breakDuration">Break Duration (minutes):</label>
+                                    <input type="number" id="breakDuration" min="1" max="60" value="5">
+                                </div>
+                                <button id="applyTimerSettings" class="btn btn-secondary btn-small">Apply</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <p class="timer-sessions">Sessions today: <span id="sessionsCount">0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Challenge Section -->
+        <section class="daily-challenge-section">
+            <div class="section-header">
+                <h2 class="section-title">Daily Challenge</h2>
+                <p class="section-subtitle">Practice your LSAT skills every day</p>
+            </div>
+
+            <div class="card question-card">
+                <div id="questionContent" class="question-content">
+                    <p class="question-type" id="questionType"></p>
+                    <p class="question-text" id="questionText">Loading today's question...</p>
+                </div>
+                <div id="answerSection" class="answer-section hidden">
+                    <h3>Answer:</h3>
+                    <p id="answerText"></p>
+                    <h3>Explanation:</h3>
+                    <p id="explanationText"></p>
+                </div>
+                <div class="question-controls">
+                    <button id="showAnswer" class="btn btn-primary">Show Answer</button>
+                    <button id="hideAnswer" class="btn btn-secondary hidden">Hide Answer</button>
+                </div>
+                <div class="question-navigation">
+                    <button id="prevQuestion" class="btn-nav">← Previous</button>
+                    <span id="questionDate"></span>
+                    <button id="nextQuestion" class="btn-nav">Next →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ for your LSAT journey</p>
+        </footer>
+    </div>
+
+    <!-- Load JavaScript Modules -->
+    <script src="js/storage.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/streak.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

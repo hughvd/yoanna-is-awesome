@@ -1,0 +1,900 @@
+/* ===========================
+   CSS Reset & Base Styles
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette - Calming and Motivating */
+    --primary-color: #6366f1; /* Indigo */
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --secondary-color: #8b5cf6; /* Purple */
+    --accent-color: #ec4899; /* Pink */
+    --success-color: #10b981; /* Green */
+    --warning-color: #f59e0b; /* Amber */
+
+    /* Neutral Colors */
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===========================
+   Header Styles
+   =========================== */
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* ===========================
+   Personal Message Banner
+   =========================== */
+
+.personal-message {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 0.5s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.personal-message.hidden {
+    display: none;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.message-icon {
+    font-size: 2rem;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* ===========================
+   Layout Sections
+   =========================== */
+
+.main-dashboard {
+    margin-bottom: var(--spacing-xl);
+}
+
+.three-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.study-mode-section,
+.daily-challenge-section {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 2px solid var(--border-color);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   Card Styles
+   =========================== */
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* ===========================
+   Countdown Timer
+   =========================== */
+
+.countdown-card {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+}
+
+.countdown-card .card-title {
+    color: white;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    margin-top: var(--spacing-xs);
+}
+
+.progress-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    height: 12px;
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--success-color), var(--warning-color));
+    height: 100%;
+    border-radius: var(--radius-lg);
+    transition: width 1s ease;
+}
+
+.progress-text {
+    text-align: center;
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+/* ===========================
+   Quote Card
+   =========================== */
+
+.quote {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-md) 0;
+}
+
+.quote-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.quote-text::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
+.quote-text::after {
+    content: '"';
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
+/* ===========================
+   Streak Card
+   =========================== */
+
+.streak-display {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.streak-flame {
+    font-size: 4rem;
+    animation: flicker 2s infinite;
+}
+
+.streak-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin: var(--spacing-sm) 0;
+}
+
+.streak-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.streak-stats {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.streak-stats p {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+}
+
+.streak-stats span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ===========================
+   Score Goal Card
+   =========================== */
+
+.score-display {
+    text-align: center;
+    padding: var(--spacing-md) 0;
+}
+
+.score-target {
+    margin-bottom: var(--spacing-md);
+}
+
+.score-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.score-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--spacing-xs);
+}
+
+.score-info {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.score-gauge {
+    background: var(--border-color);
+    border-radius: var(--radius-lg);
+    height: 20px;
+    margin: var(--spacing-md) 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.score-progress {
+    background: linear-gradient(90deg, var(--success-color), var(--primary-color));
+    height: 100%;
+    border-radius: var(--radius-lg);
+    transition: width 1s ease;
+}
+
+.score-motivation {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* ===========================
+   Timer Card
+   =========================== */
+
+.timer-display {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.timer-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.timer-circle::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    background: var(--card-bg);
+    border-radius: 50%;
+}
+
+.timer-number {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.timer-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.timer-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+.timer-mode label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.timer-mode select {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.timer-mode select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.timer-sessions {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.timer-sessions span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Large Timer Card (Study Mode) */
+.timer-card-large {
+    width: 100%;
+    position: relative;
+}
+
+.timer-card-large .timer-circle {
+    width: 250px;
+    height: 250px;
+}
+
+.timer-card-large .timer-number {
+    font-size: 3rem;
+}
+
+/* Celebration Message */
+.celebration-message {
+    background: linear-gradient(135deg, var(--success-color), var(--primary-color));
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    animation: slideDown 0.5s ease, pulse 2s ease infinite;
+}
+
+.celebration-message.hidden {
+    display: none;
+}
+
+.celebration-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.celebration-icon {
+    font-size: 3rem;
+    animation: bounce 1s ease infinite;
+}
+
+.celebration-message h3 {
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.celebration-message p {
+    font-size: 1.125rem;
+    opacity: 0.95;
+    margin: 0;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ===========================
+   Question Card
+   =========================== */
+
+.question-card {
+    width: 100%;
+}
+
+.question-type {
+    display: inline-block;
+    background: var(--primary-light);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.question-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin: var(--spacing-md) 0;
+}
+
+.answer-section {
+    background: var(--bg-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+    border-left: 4px solid var(--success-color);
+}
+
+.answer-section.hidden {
+    display: none;
+}
+
+.answer-section h3 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin: var(--spacing-sm) 0;
+}
+
+.answer-section p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.question-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.question-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-nav {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-nav:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#questionDate {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* ===========================
+   Button Styles
+   =========================== */
+
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: var(--text-secondary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.125rem;
+    min-width: 120px;
+}
+
+.btn-small {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.875rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Timer Settings */
+.timer-settings {
+    margin: var(--spacing-md) 0;
+}
+
+.timer-settings-details {
+    background: var(--bg-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+}
+
+.timer-settings-details summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-secondary);
+    list-style: none;
+    text-align: center;
+    padding: var(--spacing-xs);
+    user-select: none;
+}
+
+.timer-settings-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.timer-settings-details[open] summary {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.timer-settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.timer-setting-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.timer-setting-item label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.timer-setting-item input {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    width: 100%;
+}
+
+.timer-setting-item input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.timer-settings-content .btn {
+    margin-top: var(--spacing-xs);
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+.footer {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* ===========================
+   Animations
+   =========================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-xs);
+    }
+
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .three-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown {
+        gap: var(--spacing-sm);
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .timer-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .timer-card-large .timer-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .timer-number {
+        font-size: 2rem;
+    }
+
+    .question-navigation {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-large {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 1rem;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-item {
+        min-width: 60px;
+    }
+
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+}
