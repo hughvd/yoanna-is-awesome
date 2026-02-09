@@ -1,6 +1,6 @@
 {
   "lsatDate": "2026-04-09T09:00:00",
-  "targetScore": 170,
+  "targetScore": 180,
   "motivationalQuotes": [
     "You've got this! Every practice question brings you closer to your goal.",
     "Believe in yourself and your preparation. You're stronger than you think.",
@@ -119,468 +119,349 @@
     },
     {
       "id": 4,
-      "type": "analytical_reasoning",
-      "question": "A law firm has four associates: Alex, Bailey, Carter, and Dana. Exactly two of them are working on Contract Law, and exactly two are working on Criminal Law. If Alex is working on Contract Law and Bailey is not working on the same type of law as Alex, what can we determine?",
-      "answer": "Bailey is working on Criminal Law.",
-      "explanation": "Since Alex is on Contract Law and Bailey is not on the same type (Contract Law), Bailey must be on Criminal Law. We can't determine what Carter and Dana are working on without more information, but we know one must be Contract and one must be Criminal to satisfy the 'exactly two' constraint."
-    },
-    {
-      "id": 5,
       "type": "logic_puzzle",
       "question": "In a group of five law students, at least three have internships. At least three have completed their first year. Can we determine how many students have both?",
       "answer": "At least one student must have both.",
       "explanation": "Using the pigeonhole principle: if at least 3 have internships and at least 3 completed first year, and there are only 5 students total, there must be at least 1 overlap (3 + 3 = 6, but there are only 5 students)."
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "logical_reasoning",
       "question": "All successful LSAT takers studied regularly. Jin studied regularly. Can we conclude Jin was a successful LSAT taker?",
       "answer": "No, we cannot conclude that.",
       "explanation": "This commits the fallacy of affirming the consequent. While all successful takers studied regularly (successful \u2192 studied), knowing someone studied regularly doesn't guarantee success. Studying regularly is necessary but not sufficient for LSAT success."
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "riddle",
       "question": "A bookshelf has five legal textbooks arranged in a row. The Constitutional Law book is somewhere to the left of the Contracts book. The Torts book is immediately to the right of the Criminal Law book. If Contracts is in position 4, what is the earliest position Criminal Law could be in?",
       "answer": "Position 1.",
       "explanation": "Constitutional Law must be left of Contracts (position 4), so it's in positions 1, 2, or 3. Criminal Law and Torts are adjacent (Criminal-Torts order). The earliest Criminal could be is position 1, with Torts in position 2."
     },
     {
-      "id": 8,
-      "type": "analytical_reasoning",
-      "question": "Six students\u2014A, B, C, D, E, and F\u2014are presenting in sequence. C presents before E. B presents immediately before F. D presents after B. If A presents first, what is the earliest position F could present?",
-      "answer": "Position 3.",
-      "explanation": "A is first (position 1). B presents immediately before F (B-F are consecutive). D presents after B. Earliest: A(1), B(2), F(3), with C, D, E filling remaining spots while satisfying C before E and D after B."
-    },
-    {
-      "id": 9,
+      "id": 7,
       "type": "logic_puzzle",
       "question": "Either the witness is lying, or the defendant is guilty. The defendant is not guilty. What can we conclude?",
       "answer": "The witness is lying.",
       "explanation": "This is a disjunctive syllogism: Either A or B. Not B. Therefore, A. Since it's either the witness is lying OR the defendant is guilty, and the defendant is NOT guilty, the witness must be lying."
     },
     {
-      "id": 10,
+      "id": 8,
       "type": "logical_reasoning",
       "question": "Most lawyers who work at big firms earn high salaries. Kim works at a big firm. Can we conclude Kim earns a high salary?",
       "answer": "No, we cannot definitively conclude that.",
       "explanation": "The statement says 'most' lawyers at big firms earn high salaries, not 'all.' Kim might be among the majority who do, but could also be among the minority who don't. We can say it's probable, but not certain."
     },
     {
-      "id": 11,
+      "id": 9,
       "type": "riddle",
       "question": "Three judges\u2014Judge Adams, Judge Barnes, and Judge Chen\u2014are seated in a row. Judge Adams is not on either end. Judge Barnes is to the right of Judge Chen. What is the seating order from left to right?",
       "answer": "Chen, Adams, Barnes.",
       "explanation": "Adams is not on either end, so Adams is in the middle. Barnes is to the right of Chen. Therefore: Chen (left), Adams (middle), Barnes (right)."
     },
     {
-      "id": 12,
-      "type": "analytical_reasoning",
-      "question": "Four lawyers are scheduled for court appearances on Monday through Thursday, one per day. Lawyer M appears before Lawyer P. Lawyer N appears on Wednesday. Lawyer O appears on the day immediately after M. On which day does M appear?",
-      "answer": "Tuesday.",
-      "explanation": "N is Wednesday. O is immediately after M (M-O are consecutive). M is before P. If M were Monday, O would be Tuesday, N Wednesday, P Thursday\u2014this works! But if M were Tuesday, O is Wednesday (but N is Wednesday\u2014conflict). Therefore, M is Monday... Wait, let me reconsider. If N is Wednesday and O is immediately after M, M-O must be consecutive. M can't be Wednesday. If M is Tuesday, O is Wednesday, but N is Wednesday. Conflict. If M is Monday, O is Tuesday, N is Wednesday, P is Thursday. This works! So M appears on Monday. Actually, rereading the question\u2014I need to reconsider all scenarios properly. Let me verify: N=Wednesday. O is immediately after M. Possible: Mon-Tue, Tue-Wed, Wed-Thu. If M-O is Tue-Wed, that means M=Tue, O=Wed, but N=Wed. Conflict. If M-O is Mon-Tue, M=Mon, O=Tue, N=Wed, P=Thu. M before P? Yes. This works!"
-    },
-    {
-      "id": 13,
+      "id": 10,
       "type": "logic_puzzle",
       "question": "If it's raining, the courthouse closes early. The courthouse did not close early. What can we conclude?",
       "answer": "It is not raining.",
       "explanation": "This is modus tollens: If A then B. Not B. Therefore, not A. If raining \u2192 closes early. Did not close early. Therefore, not raining."
     },
     {
-      "id": 14,
+      "id": 11,
       "type": "logical_reasoning",
       "question": "Some law students take the LSAT more than once. All students who take it more than once improve their scores. Can we conclude that some law students improve their LSAT scores?",
       "answer": "Yes.",
       "explanation": "Some law students take it more than once (call this group X). All of group X improve their scores. Therefore, some law students (group X) improve their scores."
     },
     {
-      "id": 15,
+      "id": 12,
       "type": "riddle",
       "question": "A law library has three floors. The reading room is above the archives but below the reference section. On which floor is the reading room if the archives are on the first floor?",
       "answer": "The second floor.",
       "explanation": "Archives are floor 1. Reading room is above archives, so floor 2 or 3. Reading room is below reference section. If reading is floor 2, reference is floor 3. This satisfies all conditions."
     },
     {
-      "id": 16,
-      "type": "analytical_reasoning",
-      "question": "Five witnesses\u2014V, W, X, Y, Z\u2014testify in order. V testifies before W and X. Y testifies before Z but after X. In what position does X testify?",
-      "answer": "Third position.",
-      "explanation": "V is before W and X. Y is after X but before Z. Order must satisfy: V before W, V before X, X before Y, Y before Z. One valid order: V(1), W(2), X(3), Y(4), Z(5). X is in position 3."
-    },
-    {
-      "id": 17,
+      "id": 13,
       "type": "logic_puzzle",
       "question": "No mammals are reptiles. All dogs are mammals. Therefore, what can we conclude about dogs and reptiles?",
       "answer": "No dogs are reptiles.",
       "explanation": "This is a categorical syllogism. No mammals are reptiles. All dogs are mammals. Therefore, no dogs are reptiles (they're excluded from the reptile category)."
     },
     {
-      "id": 18,
+      "id": 14,
       "type": "logical_reasoning",
       "question": "The defendant is innocent unless proven guilty. The defendant has not been proven guilty. What can we conclude?",
       "answer": "The defendant is innocent (under the presumption of innocence).",
       "explanation": "This reflects the legal principle 'innocent unless proven guilty.' Since not proven guilty, we maintain the presumption of innocence. The defendant is treated as innocent."
     },
     {
-      "id": 19,
+      "id": 15,
       "type": "riddle",
       "question": "Four law partners\u2014A, B, C, D\u2014are sitting around a square table, one on each side. A sits across from C. B sits to the right of A. Who sits across from B?",
       "answer": "D sits across from B.",
       "explanation": "A is across from C. B is to the right of A. In a square: if A and C are opposite, and B is to A's right, then D must be to A's left (the remaining seat). D is therefore opposite B."
     },
     {
-      "id": 20,
-      "type": "analytical_reasoning",
-      "question": "A law firm assigns four interns to two projects (Project 1 and Project 2). Each project needs at least one intern. Intern A refuses to work with Intern B. If A is assigned to Project 1, and there are two interns on each project, who cannot be on Project 1?",
-      "answer": "Intern B cannot be on Project 1.",
-      "explanation": "A is on Project 1. A refuses to work with B. Therefore, B must be on Project 2, not Project 1."
-    },
-    {
-      "id": 21,
+      "id": 16,
       "type": "logical_reasoning",
       "question": "If studying consistently leads to improvement, and Sarah has been studying consistently, what can we conclude?",
       "answer": "Sarah's performance has likely improved.",
       "explanation": "The premise states consistent studying leads to improvement. Sarah studies consistently, so we can reasonably conclude she has improved. However, note 'likely' since other factors could affect outcomes."
     },
     {
-      "id": 22,
+      "id": 17,
       "type": "logic_puzzle",
       "question": "All LSAT test-takers are college graduates. Some lawyers are LSAT test-takers. What can we validly conclude?",
       "answer": "Some lawyers are college graduates.",
       "explanation": "This is a valid syllogism. If all LSAT takers are college grads, and some lawyers are LSAT takers, then those lawyers must be college grads."
     },
     {
-      "id": 23,
-      "type": "analytical_reasoning",
-      "question": "Five students\u2014J, K, L, M, N\u2014present in order. K presents before L. M presents before N. J presents first or last. If J presents first, which position could L be in?",
-      "answer": "L could be in positions 3, 4, or 5.",
-      "explanation": "If J is first (position 1), K must be before L, and M before N. Possible orders: J, K, M, L, N or J, K, L, M, N or J, M, K, L, N. L can be in positions 3, 4, or 5."
-    },
-    {
-      "id": 24,
+      "id": 18,
       "type": "riddle",
       "question": "A library has more law books than history books. It has fewer history books than science books. Which type of book is definitely not the most numerous?",
       "answer": "History books are definitely not the most numerous.",
       "explanation": "Law books > History books and Science books > History books. Therefore, history books cannot be the most numerous (both law and science exceed it)."
     },
     {
-      "id": 25,
+      "id": 19,
       "type": "logical_reasoning",
       "question": "Every LSAT question has exactly one correct answer. This is an LSAT question. Therefore...?",
       "answer": "This question has exactly one correct answer.",
       "explanation": "Simple deductive reasoning: All LSAT questions have one correct answer. This is an LSAT question. Therefore, this question has one correct answer."
     },
     {
-      "id": 26,
+      "id": 20,
       "type": "logic_puzzle",
       "question": "If the library is open, then the librarian is present. The librarian is not present. What follows?",
       "answer": "The library is not open.",
       "explanation": "This is modus tollens: If P then Q. Not Q. Therefore, not P. If library open \u2192 librarian present. Librarian not present \u2192 library not open."
     },
     {
-      "id": 27,
-      "type": "analytical_reasoning",
-      "question": "Three judges vote on a case. Each votes guilty, not guilty, or abstains. At least two must vote the same way for a decision. If Judge A votes guilty and Judge B abstains, how could Judge C vote?",
-      "answer": "Judge C could vote guilty or abstain.",
-      "explanation": "For at least two to vote the same, C must match either A or B. If C votes guilty (matching A), we have 2 guilty votes. If C abstains (matching B), we have 2 abstains. Both satisfy the constraint."
-    },
-    {
-      "id": 28,
+      "id": 21,
       "type": "logical_reasoning",
       "question": "Most successful lawyers were good students. Maria was a good student. Can we conclude Maria will be a successful lawyer?",
       "answer": "No, we cannot conclude that.",
       "explanation": "This confuses necessary and sufficient conditions. Being a good student is common among successful lawyers (necessary) but doesn't guarantee success (not sufficient). Many good students may not become successful lawyers."
     },
     {
-      "id": 29,
+      "id": 22,
       "type": "riddle",
       "question": "Three law partners share an office. Alice arrives before Bob. Charlie arrives after Bob but before the office opens at 9 AM. If Alice arrives at 8:30 AM, what's the earliest Bob could arrive?",
       "answer": "8:31 AM (any time after 8:30 AM but before Charlie, who arrives before 9 AM).",
       "explanation": "Alice arrives at 8:30. Bob arrives after Alice, so after 8:30. Charlie arrives after Bob but before 9:00. So: 8:30 (Alice) < Bob < Charlie < 9:00. Bob's earliest time is 8:31 AM."
     },
     {
-      "id": 30,
+      "id": 23,
       "type": "logic_puzzle",
       "question": "Either the contract is valid, or the signature is forged. The signature is authentic. What can we conclude?",
       "answer": "The contract is valid.",
       "explanation": "Disjunctive syllogism: Either A or B. Not B (signature is not forged = authentic). Therefore, A (contract is valid)."
     },
     {
-      "id": 31,
-      "type": "analytical_reasoning",
-      "question": "Four lawyers\u2014P, Q, R, S\u2014work Monday through Thursday, one per day. P works before Q. R works on Wednesday. S works the day after P. Which day does P work?",
-      "answer": "Monday.",
-      "explanation": "R is Wednesday. S works immediately after P. P is before Q. If P=Monday, S=Tuesday, R=Wednesday, Q=Thursday. This satisfies all constraints. If P=Tuesday, S=Wednesday, but R=Wednesday (conflict). So P=Monday."
-    },
-    {
-      "id": 32,
+      "id": 24,
       "type": "logical_reasoning",
       "question": "No mammals lay eggs. The platypus lays eggs. Therefore...?",
       "answer": "The platypus is not a mammal (based on the premises, though factually incorrect).",
       "explanation": "This is a valid syllogism, even though the first premise is factually wrong. No mammals lay eggs. Platypus lays eggs. Therefore, platypus is not a mammal. The logic is valid; the premise is false in reality."
     },
     {
-      "id": 33,
+      "id": 25,
       "type": "riddle",
       "question": "A courthouse has 5 floors. The jury room is above the judges' chambers but below the law library. The cafeteria is on floor 1. The judges' chambers are on floor 2. Which floor is the jury room on?",
       "answer": "Floor 3 or 4 (above floor 2, below the law library).",
       "explanation": "Judges chambers = floor 2. Jury room > floor 2 and Jury room < law library. So jury room could be floor 3 (with library on 4 or 5) or floor 4 (with library on 5). Without knowing the library's exact floor, we can say floor 3 or 4."
     },
     {
-      "id": 34,
+      "id": 26,
       "type": "logic_puzzle",
       "question": "If it rains, the trial is postponed. If the trial is postponed, the witness reschedules. It rained. What follows?",
       "answer": "The witness reschedules.",
       "explanation": "Chain of conditionals (hypothetical syllogism): Rain \u2192 postponed \u2192 witness reschedules. It rained. Therefore, postponed. Therefore, witness reschedules."
     },
     {
-      "id": 35,
-      "type": "analytical_reasoning",
-      "question": "Six lawyers sit in a row. A sits next to B. C sits at one end. D sits between E and F. If C is at the left end, where can A and B be?",
-      "answer": "A and B can be in positions 2-3, 3-4, 4-5, or 5-6 (any adjacent pair except position 1).",
-      "explanation": "C is at position 1 (left end). A and B are adjacent (A-B or B-A). D is between E and F (E-D-F or F-D-E, taking 3 consecutive spots). This leaves 2 spots for A-B. Possible arrangements allow A-B in various positions as long as they're adjacent."
-    },
-    {
-      "id": 36,
+      "id": 27,
       "type": "logical_reasoning",
       "question": "Some law students take philosophy courses. All philosophy courses improve critical thinking. What can we validly conclude?",
       "answer": "Some law students improve their critical thinking.",
       "explanation": "Some law students take philosophy (group X). All philosophy courses improve critical thinking. Therefore, those in group X (law students in philosophy) improve critical thinking."
     },
     {
-      "id": 37,
+      "id": 28,
       "type": "riddle",
       "question": "Three documents must be reviewed in order: Contract, Memo, Brief. The Contract takes 2 hours, Memo takes 1 hour, Brief takes 3 hours. If you start at 9 AM, when will you finish?",
       "answer": "3 PM (6 hours total: 2+1+3).",
       "explanation": "Total time: 2+1+3 = 6 hours. Starting at 9 AM: 9 AM + 6 hours = 3 PM."
     },
     {
-      "id": 38,
+      "id": 29,
       "type": "logic_puzzle",
       "question": "All witnesses testified truthfully, or at least one lied. At least one lied. What can we conclude?",
       "answer": "Not all witnesses testified truthfully.",
       "explanation": "This is a disjunction: All truthful OR at least one lied. We know at least one lied. Therefore, 'all truthful' is false, meaning not all were truthful."
     },
     {
-      "id": 39,
-      "type": "analytical_reasoning",
-      "question": "A law firm has 4 partners (W, X, Y, Z) and 4 offices (1, 2, 3, 4). W is in office 1. X is not adjacent to W. Y is in office 3. Where can X be?",
-      "answer": "Office 3 or 4.",
-      "explanation": "W is in office 1. X is not adjacent to W (so not office 2). Y is in office 3. X can be office 3 (same as Y if shared) or office 4. If offices aren't shared, X must be office 4 (since Y has 3). Actually, if one person per office: W=1, Y=3, Z and X in 2 and 4. X not adjacent to W means X \u2260 2. So X=4, Z=2."
-    },
-    {
-      "id": 40,
+      "id": 30,
       "type": "logical_reasoning",
       "question": "If a law is unjust, it should not be followed. This law is just. Can we conclude it should be followed?",
       "answer": "No, we cannot conclude that from the given premises.",
       "explanation": "The premise only tells us: unjust \u2192 should not follow. This doesn't tell us what to do with just laws. This is affirming the consequent in reverse. We'd need: 'just \u2192 should follow' to make this conclusion."
     },
     {
-      "id": 41,
+      "id": 31,
       "type": "riddle",
       "question": "A bookshelf has 5 shelves. Constitutional Law is 2 shelves above Contracts. Contracts is on shelf 2. Where is Constitutional Law?",
       "answer": "Shelf 4.",
       "explanation": "Contracts = shelf 2. Constitutional Law = 2 shelves above = shelf 2 + 2 = shelf 4."
     },
     {
-      "id": 42,
+      "id": 32,
       "type": "logic_puzzle",
       "question": "If the defendant is guilty, physical evidence exists. Physical evidence exists. Is the defendant guilty?",
       "answer": "We cannot conclude the defendant is guilty.",
       "explanation": "This is the fallacy of affirming the consequent. Guilty \u2192 evidence. Evidence exists doesn't mean guilty (evidence could exist for other reasons)."
     },
     {
-      "id": 43,
-      "type": "analytical_reasoning",
-      "question": "Five cases are heard in order: A, B, C, D, E. A is heard before C. D is heard immediately after B. E is heard last. What position is C in?",
-      "answer": "Position 3 or 4.",
-      "explanation": "E is position 5 (last). D is immediately after B (B-D consecutive). A before C. Possible: A, B, D, C, E (C in position 4) or B, D, A, C, E (C in position 4). Or A, C, B, D, E? Let's check: A before C \u2713, D after B \u2713, E last \u2713. So C can be position 2, 3, or 4 depending on arrangement. Actually, C in position 3 works: A, B, C, D, E? No, D must be immediately after B. Let me reconsider: B-D are consecutive. E is last (5). A before C. Option 1: B(1), D(2), A(3), C(4), E(5). A before C \u2713. Option 2: A(1), B(2), D(3), C(4), E(5). A before C \u2713. So C can be position 4."
-    },
-    {
-      "id": 44,
+      "id": 33,
       "type": "logical_reasoning",
       "question": "Most judges are fair. Judge Thompson is a judge. Therefore...?",
       "answer": "Judge Thompson is probably fair, but we cannot be certain.",
       "explanation": "'Most' indicates probability, not certainty. Most judges are fair means Judge Thompson is likely fair, but not definitely fair."
     },
     {
-      "id": 45,
+      "id": 34,
       "type": "riddle",
       "question": "In a law office, partners always tell the truth and associates always lie. Someone says 'I am a partner.' Could this person be an associate?",
       "answer": "Yes, an associate would lie and claim to be a partner.",
       "explanation": "Partners tell truth, so a partner saying 'I am a partner' is truthful. Associates lie, so an associate would falsely claim 'I am a partner.' Therefore, we cannot determine from this statement alone whether the speaker is a partner or associate."
     },
     {
-      "id": 46,
+      "id": 35,
       "type": "logic_puzzle",
       "question": "No reptiles are mammals. All snakes are reptiles. Therefore, what is true about snakes and mammals?",
       "answer": "No snakes are mammals.",
       "explanation": "Valid categorical syllogism. No reptiles are mammals. All snakes are reptiles. Therefore, no snakes are mammals."
     },
     {
-      "id": 47,
-      "type": "analytical_reasoning",
-      "question": "Four attorneys each handle one case type: Tax, IP, Criminal, or Family. K handles Criminal. L handles Family. M handles Tax. What does J handle?",
-      "answer": "J handles IP (Intellectual Property).",
-      "explanation": "Four attorneys, four case types (one-to-one). K=Criminal, L=Family, M=Tax. The remaining type is IP, so J=IP."
-    },
-    {
-      "id": 48,
+      "id": 36,
       "type": "logical_reasoning",
       "question": "If you study hard, you will do well on the LSAT. You did well on the LSAT. Can we conclude you studied hard?",
       "answer": "No, we cannot conclude that.",
       "explanation": "This commits affirming the consequent. Study hard \u2192 do well. Doing well doesn't necessarily mean you studied hard (could be natural aptitude, luck, etc.)."
     },
     {
-      "id": 49,
+      "id": 37,
       "type": "riddle",
       "question": "Five law students study in a library. Alex studies more hours than Beth. Carol studies fewer hours than Dana. Beth studies the same hours as Dana. Who studies the most hours?",
       "answer": "Alex or Dana (tied), or we need more information.",
       "explanation": "Alex > Beth. Carol < Dana. Beth = Dana. So: Alex > Beth = Dana > Carol. Alex vs Dana: We know Alex > Beth and Beth = Dana, so Alex > Dana. Therefore Alex studies the most."
     },
     {
-      "id": 50,
+      "id": 38,
       "type": "logic_puzzle",
       "question": "All lawyers passed the bar exam. Some lawyers attended Harvard. What can we conclude about Harvard attendees?",
       "answer": "Some Harvard attendees passed the bar exam.",
       "explanation": "All lawyers passed bar. Some lawyers attended Harvard. Those lawyers who attended Harvard must have passed the bar. So some Harvard attendees passed the bar."
     },
     {
-      "id": 51,
-      "type": "analytical_reasoning",
-      "question": "Three partners meet on Monday, Wednesday, or Friday. A meets on Monday. B meets on Wednesday. Which day does C meet?",
-      "answer": "C meets on Friday.",
-      "explanation": "Three partners, three meeting days (Mon, Wed, Fri). A=Monday, B=Wednesday. The remaining day is Friday, so C=Friday."
-    },
-    {
-      "id": 52,
+      "id": 39,
       "type": "logical_reasoning",
       "question": "Either the witness is credible, or the evidence is flawed. The witness is credible. What follows?",
       "answer": "We cannot conclude anything definite about the evidence.",
       "explanation": "This is 'Either A or B' (inclusive or exclusive?). If inclusive OR: witness is credible doesn't tell us about the evidence (both could be true). If exclusive OR: witness credible means evidence is not flawed. LSAT typically uses inclusive OR unless specified."
     },
     {
-      "id": 53,
+      "id": 40,
       "type": "riddle",
       "question": "A judge always rules based on the law. The law requires punishment for this crime. The defendant committed the crime. What will the judge rule?",
       "answer": "The judge will rule that the defendant must be punished.",
       "explanation": "Judge rules based on law. Law requires punishment for this crime. Defendant committed the crime. Therefore, judge must rule for punishment."
     },
     {
-      "id": 54,
+      "id": 41,
       "type": "logic_puzzle",
       "question": "If the motion is granted, the trial is delayed. The trial is not delayed. What can we conclude?",
       "answer": "The motion was not granted.",
       "explanation": "Modus tollens: If P then Q. Not Q. Therefore not P. Motion granted \u2192 trial delayed. Trial not delayed \u2192 motion not granted."
     },
     {
-      "id": 55,
-      "type": "analytical_reasoning",
-      "question": "Six associates rank from first to sixth. A ranks higher than B and C. D ranks lower than E. F ranks fourth. If B ranks fifth, where does A rank?",
-      "answer": "A ranks first, second, or third.",
-      "explanation": "A > B and A > C. B=5th. F=4th. D < E. A must be higher than 5th, and not 4th (F is 4th), so A is 1st, 2nd, or 3rd. We need more constraints to narrow further, but these are the possibilities."
-    },
-    {
-      "id": 56,
+      "id": 42,
       "type": "logical_reasoning",
       "question": "Only those who register can vote. Maria can vote. What must be true?",
       "answer": "Maria registered.",
       "explanation": "'Only registered people can vote' means: vote \u2192 registered. Maria votes. Therefore, Maria registered. This is a valid inference."
     },
     {
-      "id": 57,
+      "id": 43,
       "type": "riddle",
       "question": "Three lawyers bill clients at different rates: $200, $300, and $400 per hour. The corporate lawyer charges the most. The tax lawyer charges less than the criminal lawyer. Who is the corporate lawyer?",
       "answer": "The corporate lawyer charges $400/hour.",
       "explanation": "Corporate lawyer charges most = $400. Tax < Criminal. Remaining rates: $200 and $300. Tax=$200, Criminal=$300."
     },
     {
-      "id": 58,
+      "id": 44,
       "type": "logic_puzzle",
       "question": "All valid arguments with true premises have true conclusions. This argument has a true conclusion. Is it valid with true premises?",
       "answer": "Not necessarily.",
       "explanation": "Valid + true premises \u2192 true conclusion. Having a true conclusion doesn't mean the argument is valid with true premises (could be invalid or have false premises). Affirming the consequent fallacy."
     },
     {
-      "id": 59,
-      "type": "analytical_reasoning",
-      "question": "A panel of 5 judges votes yes or no. At least 3 must vote yes for a motion to pass. If 2 have voted yes and 1 has voted no, how many more yes votes are needed?",
-      "answer": "At least 1 more yes vote is needed.",
-      "explanation": "Need 3 yes votes total. Currently 2 yes votes. Need 1 more yes vote to reach 3. (Though if remaining 2 judges both vote no, we'd have 2 yes, 3 no, and motion fails.)"
-    },
-    {
-      "id": 60,
+      "id": 45,
       "type": "logical_reasoning",
       "question": "Some attorneys work long hours. All who work long hours experience stress. What follows?",
       "answer": "Some attorneys experience stress.",
       "explanation": "Some attorneys work long hours. All who work long hours experience stress. Therefore, those attorneys (who work long hours) experience stress. So some attorneys experience stress."
     },
     {
-      "id": 61,
+      "id": 46,
       "type": "riddle",
       "question": "A legal team of 4 must present for exactly 60 minutes. Each person presents once. Alice presents for 15 minutes. Bob presents for 20 minutes. Carol presents for 10 minutes. How long does Dan present?",
       "answer": "15 minutes.",
       "explanation": "Total = 60 minutes. Alice(15) + Bob(20) + Carol(10) + Dan(?) = 60. Dan = 60 - 45 = 15 minutes."
     },
     {
-      "id": 62,
+      "id": 47,
       "type": "logic_puzzle",
       "question": "If the law is enforced, compliance increases. Compliance has increased. Was the law enforced?",
       "answer": "Not necessarily. We cannot conclude that from the information given.",
       "explanation": "Law enforced \u2192 compliance increases. Compliance increased doesn't necessarily mean law was enforced (could be other reasons). Affirming the consequent fallacy."
     },
     {
-      "id": 63,
-      "type": "analytical_reasoning",
-      "question": "Five students present in order: V, W, X, Y, Z. V presents before W and X. Y presents before Z. X presents immediately before Y. In what position does W present?",
-      "answer": "Position 1 or 2.",
-      "explanation": "V before W and X. X immediately before Y (X-Y consecutive). Y before Z. So X-Y-Z are in that order (3 consecutive or close). V before W and X. One valid order: V, W, X, Y, Z. V=1, W=2, X=3, Y=4, Z=5. W is position 2. Alternatively: W, V, X, Y, Z? But V must be before W. So V before W. Given constraints, W can be position 2 or later. If V=1, W can be 2. If V and W are both before X, and X is immediately before Y: V, W, X, Y, Z. W=2."
-    },
-    {
-      "id": 64,
+      "id": 48,
       "type": "logical_reasoning",
       "question": "No one who arrives late is admitted. John was admitted. What can we conclude?",
       "answer": "John did not arrive late.",
       "explanation": "No late arrivals are admitted. Equivalently: admitted \u2192 not late. John admitted. Therefore, John not late. Valid inference (contrapositive logic)."
     },
     {
-      "id": 65,
+      "id": 49,
       "type": "riddle",
       "question": "A law firm's hierarchy: Partners > Senior Associates > Junior Associates > Paralegals. Sarah outranks Tom. Tom outranks paralegals but is not a senior associate. What is Tom's position?",
       "answer": "Junior Associate.",
       "explanation": "Tom outranks paralegals, so Tom is not a paralegal. Tom is not a senior associate. Therefore, Tom is a junior associate or partner. Sarah outranks Tom, and given the context, Tom is most likely a junior associate."
     },
     {
-      "id": 66,
+      "id": 50,
       "type": "logic_puzzle",
       "question": "If today is Monday, then yesterday was Sunday. Yesterday was not Sunday. What day is today?",
       "answer": "Today is not Monday.",
       "explanation": "If Monday \u2192 yesterday Sunday. Yesterday not Sunday. By modus tollens: today is not Monday. (We can't determine the exact day, only that it's not Monday.)"
     },
     {
-      "id": 67,
-      "type": "analytical_reasoning",
-      "question": "A committee of 6 people sits in a row. P sits at one end. Q sits next to P. R sits between S and T. U sits somewhere. What is one possible arrangement?",
-      "answer": "P, Q, R, S, T, U or P, Q, S, R, T, U (among many possibilities).",
-      "explanation": "P at one end. Q next to P. R between S and T. One valid arrangement: P, Q, S, R, T, U. P at left end, Q next to P, S-R-T in that order, U at right end."
-    },
-    {
-      "id": 68,
+      "id": 51,
       "type": "logical_reasoning",
       "question": "Anyone who wins an appeal has strong arguments. Lisa won her appeal. What can we conclude?",
       "answer": "Lisa had strong arguments.",
       "explanation": "Win appeal \u2192 strong arguments. Lisa won appeal. Therefore, Lisa had strong arguments. Valid deductive inference."
     },
     {
-      "id": 69,
+      "id": 52,
       "type": "riddle",
       "question": "A case involves 3 suspects: Red, Blue, Green. Only one is guilty. Red says 'Blue is guilty.' Blue says 'Green is guilty.' If only the guilty party lies, who is guilty?",
       "answer": "Blue is guilty.",
       "explanation": "If Blue is guilty: Blue lies, so 'Green guilty' is false \u2713. Red tells truth, so 'Blue guilty' is true \u2713. This is consistent. If Red were guilty, Red would lie saying 'Blue guilty' is false, but Red says Blue IS guilty (contradiction). If Green were guilty, Green would lie, but we don't have Green's statement. Red says 'Blue guilty' would be false (but Red should be truthful - contradiction). So Blue is guilty."
     },
     {
-      "id": 70,
+      "id": 53,
       "type": "logic_puzzle",
       "question": "All successful LSAT takers studied logic games. Some successful LSAT takers attended prep courses. Can we conclude anything about prep courses and logic games?",
       "answer": "Some people who attended prep courses studied logic games.",
