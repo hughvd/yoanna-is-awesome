@@ -1,5 +1,5 @@
 {
-  "lsatDate": "2026-06-15T09:00:00",
+  "lsatDate": "2026-04-9T09:00:00",
   "targetScore": 170,
   "motivationalQuotes": [
     "You've got this! Every practice question brings you closer to your goal.",
@@ -57,17 +57,22 @@
     {
       "trigger": "daysUntil",
       "value": 14,
-      "message": "Two weeks! Can you believe it? You're so ready for this. Remember to breathe and take care of yourself. \u2764\ufe0f"
+      "message": "Two weeks! Can you believe it? You're so ready for this. \u2764\ufe0f"
     },
     {
       "trigger": "daysUntil",
       "value": 7,
-      "message": "One week! You've prepared so well for this moment. Now it's time to trust your preparation. I'm so proud of you! \ud83c\udf89"
+      "message": "OMG! One week lemin! You've prepared so well for this moment. Trust in yourself! I am so proud of you! \ud83c\udf89"
     },
     {
       "trigger": "daysUntil",
       "value": 1,
-      "message": "Tomorrow is the big day! You've got this. Remember: breathe, trust yourself, and show that test what you're made of! I love you! \ud83d\udc95"
+      "message": "Tomorrow is the big day! GO LEMIN! GO LEMIN! GO LEMIN! You've got this. Remember: breathe, trust yourself, and show that test what you're made of! I love you! \ud83d\udc95"
+    },
+    {
+      "trigger": "daysUntil",
+      "value": 0,
+      "message": "LOCK IN LEMIN! You are so ready, always remember to deep breathe. Trust in yourself and the hard work that got you here! I love you and am so proud of you!"
     },
     {
       "trigger": "streak",
