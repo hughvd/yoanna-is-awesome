@@ -39,6 +39,13 @@ const Countdown = {
         // Start countdown
         this.update();
         this.interval = setInterval(() => this.update(), 1000);
+
+        // Update immediately when tab becomes visible again
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                this.update();
+            }
+        });
     },
 
     /**
