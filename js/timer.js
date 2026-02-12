@@ -24,7 +24,9 @@ const Timer = {
         isPaused: false,
         mode: 'work', // 'work' or 'break'
         timeRemaining: 25 * 60, // seconds
-        interval: null
+        interval: null,
+        startTime: null, // Track actual start time for accuracy
+        pausedTime: 0 // Track time spent paused
     },
 
     // Timer durations (in seconds) - will be set from config
@@ -60,6 +62,13 @@ const Timer = {
 
         // Initial display
         this.updateDisplay();
+
+        // Update immediately when tab becomes visible (important for mobile Safari)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && this.state.isRunning) {
+                this.tick(); // Immediately recalculate time
+            }
+        });
     },
 
     /**
@@ -116,6 +125,16 @@ const Timer = {
         this.state.isRunning = true;
         this.state.isPaused = false;
 
+        // Record start time (or resume time)
+        if (!this.state.startTime) {
+            // First start - record the target end time
+            this.state.startTime = Date.now();
+            this.state.endTime = this.state.startTime + (this.state.timeRemaining * 1000);
+        } else {
+            // Resuming from pause - adjust end time
+            this.state.endTime = Date.now() + (this.state.timeRemaining * 1000);
+        }
+
         // Update button states
         this.elements.startBtn.disabled = true;
         this.elements.pauseBtn.disabled = false;
@@ -151,8 +170,10 @@ const Timer = {
         // Stop timer
         this.pause();
 
-        // Reset time
+        // Reset time and clear start time
         this.state.timeRemaining = this.durations[this.state.mode];
+        this.state.startTime = null;
+        this.state.endTime = null;
         this.state.isPaused = false;
 
         // Update button states
@@ -175,7 +196,9 @@ const Timer = {
         this.state.mode = mode;
         this.state.timeRemaining = this.durations[mode];
 
-        // Reset state
+        // Reset timing state
+        this.state.startTime = null;
+        this.state.endTime = null;
         this.state.isPaused = false;
 
         // Update display
@@ -186,7 +209,11 @@ const Timer = {
      * Timer tick (every second)
      */
     tick() {
-        this.state.timeRemaining--;
+        // Calculate time remaining based on actual time (not just decrementing)
+        const now = Date.now();
+        const timeLeft = Math.max(0, Math.ceil((this.state.endTime - now) / 1000));
+
+        this.state.timeRemaining = timeLeft;
 
         // Update display
         this.updateDisplay();
